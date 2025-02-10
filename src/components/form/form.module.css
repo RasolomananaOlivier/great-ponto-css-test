@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.innerform {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0 16px 0;
+}
+
+.inputContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 20px;
+}
+
+.form p {
+  color: #4c4c55;
+}
+
+@media (max-width: 768px) {
+  .form {
+    gap: 16px;
+  }
+
+  .innerform {
+    flex-direction: column-reverse;
+    padding: 16px 0 0 0;
+  }
+
+  .inputRow {
+    flex-direction: column;
+  }
+}

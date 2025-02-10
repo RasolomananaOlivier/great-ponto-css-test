@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.089em;
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-width: 64px;
+
+  height: 40px;
+}
+
+.contained {
+  background-color: #1976d2;
+  color: white;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.contained:hover {
+  background-color: #1565c0;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.contained:active {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.ghostDanger {
+  background-color: transparent;
+  color: #d32f2f;
+  box-shadow: none;
+}
+
+.ghostDanger:hover {
+  background-color: rgba(211, 47, 47, 0.04);
+  color: #9a0007;
+  box-shadow: none;
+}
+
+.ghostDanger:active {
+  background-color: rgba(211, 47, 47, 0.04);
+  color: #9a0007;
+  box-shadow: none;
+}

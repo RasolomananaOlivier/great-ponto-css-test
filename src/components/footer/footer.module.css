@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  gap: 32px;
+}
+
+.container a {
+  color: #4c4c55;
+}

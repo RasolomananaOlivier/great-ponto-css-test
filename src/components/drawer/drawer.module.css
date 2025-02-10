@@ -1,0 +1,120 @@
+.container {
+  display: flex; /* Use flexbox for layout flexibility */
+  position: absolute; /* For positioning the drawer absolutely */
+  /* min-height: 100vh;  */
+  overflow-x: hidden;
+}
+
+.nav {
+  position: sticky; /* Fixed position relative to viewport */
+  top: 0;
+  left: 0;
+
+  background-color: white;
+  width: 100%;
+
+  padding: 10px 18px 10px 18px;
+  z-index: 100;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggler {
+  background-color: transparent;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 100%;
+  cursor: pointer;
+
+  height: 40px;
+  width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 100;   */
+}
+
+.toggler:hover,
+.togger:active {
+  background-color: rgb(244, 242, 242);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black backdrop */
+  z-index: 90;
+}
+
+.drawer {
+  position: fixed; /* Fixed position relative to viewport */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Adjust drawer width as needed */
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  z-index: 100; /* Above backdrop and main content */
+  transform: translateX(-100%); /* Initially hidden off-screen to the left */
+  transition: transform 0.3s ease-in-out; /* Smooth slide animation */
+  overflow-y: auto; /* Allow vertical scrolling if content is long */
+  display: flex; /* Flexbox for header and content layout */
+  flex-direction: column;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.close {
+  transform: translateX(-100%);
+}
+
+.drawerHeader {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawerContent {
+  flex: 1;
+
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
+.drawerContent li {
+  height: 100px;
+}
+
+.drawerFooter {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .drawer {
+    width: 80%; /* Example: Make drawer wider on smaller screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
