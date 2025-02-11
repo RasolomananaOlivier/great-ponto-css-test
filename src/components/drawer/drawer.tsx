@@ -2,6 +2,11 @@
 
 import React, { useState } from "react";
 import styles from "./drawer.module.css";
+import NavItem from "../nav-item/nav-item";
+import Image from "next/image";
+import { boardAgents, boards, jobs, searches } from "@/constant";
+import IconButton from "../icon-button/icon-button";
+import UserProfile from "../user-profile/user-profile";
 
 export default function Drawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +46,7 @@ export default function Drawer() {
           aria-hidden={!isOpen}
         >
           <div className={styles.drawerHeader}>
-            <h3>Navigation</h3> {/* Drawer Header Content */}
+            <Image src="/logo.svg" alt="Logo" width={130} height={42} />
             <button
               className={styles.closeButton}
               onClick={closeDrawer}
@@ -51,36 +56,42 @@ export default function Drawer() {
             </button>
           </div>
           <div className={styles.drawerContent}>
-            {/* Drawer Content Goes Here (Navigation Links, etc.) */}
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
+            <NavItem title="My templates" icon="/template.svg" />
+            <NavItem title="Search" icon="/search.svg">
+              {jobs.map((job, index) => (
+                <NavItem key={index} title={job} icon="/star.png" subfolder />
+              ))}
+
+              {searches.map((search, index) => (
+                <NavItem
+                  key={index}
+                  title={search}
+                  icon="/clock.svg"
+                  subfolder
+                />
+              ))}
+            </NavItem>
+            <NavItem
+              title="My boards"
+              icon="/board.svg"
+              trailing={<IconButton title="add" icon="/add.svg" />}
+            >
+              {boards.map((board, index) => (
+                <NavItem
+                  key={index}
+                  title={board}
+                  icon="/folder.png"
+                  subfolder
+                />
+              ))}
+
+              {boardAgents.map((board, index) => (
+                <NavItem key={index} title={board} icon="/lock.png" subfolder />
+              ))}
+            </NavItem>
           </div>
           <div className={styles.drawerFooter}>
-            <h3>Footer</h3> {/* Drawer Header Content */}
+            <UserProfile />
           </div>
         </aside>
       </div>

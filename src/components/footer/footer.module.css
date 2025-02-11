@@ -6,3 +6,10 @@
 .container a {
   color: #4c4c55;
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

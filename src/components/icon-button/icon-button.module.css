@@ -1,0 +1,22 @@
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #e5e5e5;
+}
+
+.button:focus {
+  outline: none;
+}

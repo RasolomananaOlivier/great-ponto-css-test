@@ -5,14 +5,49 @@
 }
 
 .sidebar {
-  width: 256px; /* Google Material Design recommendation */
-  height: 100vh;
-  background-color: #333;
-  color: white;
-
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
+
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ececed;
+}
+
+.header {
+  border-bottom: 1px solid #ececed;
+  padding: 10px 12px;
+  background-color: white;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.content {
+  flex: 1; /* Take up remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.content {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 25px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Background color of the track */
+    border-radius: 25px;
+  }
+}
+
+.footer {
+  border-top: 1px solid #ececed;
+  padding: 10px 12px;
+  background-color: white;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  margin-top: auto; /* Push footer to bottom */
 }
 
 .main {
@@ -31,6 +66,10 @@
 
 .divider {
   border-bottom: 1px solid #e3e3e4;
+}
+
+.checkbox {
+  color: #4c4c55;
 }
 
 @media (max-width: 768px) {

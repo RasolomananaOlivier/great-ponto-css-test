@@ -46,18 +46,7 @@ export default function Form() {
         </p>
 
         <div>
-          <Button>Save</Button>
-        </div>
-
-        <div>
-          <input type="checkbox" id="myCheckbox" name="myCheckbox" />
-          <label htmlFor="myCheckbox">
-            Show my profile to serious employers on{" "}
-            <a href="https://hirethesbest.io" target="_blanked">
-              hirethesbest.io
-            </a>{" "}
-            for free
-          </label>
+          <Button style={{ width: "170px" }}>Save</Button>
         </div>
       </form>
     </div>

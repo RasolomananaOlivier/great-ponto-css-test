@@ -2,11 +2,10 @@ import React from "react";
 import styles from "./button.module.css";
 
 type ButtonProps = {
-  children: React.ReactNode;
   variant?: "contained" | "ghost-danger";
-};
+} & React.PropsWithChildren<React.ComponentPropsWithoutRef<"button">>;
 
-export default function Button({ children, variant }: ButtonProps) {
+export default function Button({ children, variant, ...props }: ButtonProps) {
   const getVariant = () => {
     switch (variant) {
       case "ghost-danger":
@@ -17,6 +16,8 @@ export default function Button({ children, variant }: ButtonProps) {
   };
 
   return (
-    <button className={`${styles.button} ${getVariant()}`}>{children}</button>
+    <button className={`${styles.button} ${getVariant()}`} {...props}>
+      {children}
+    </button>
   );
 }
